@@ -1,0 +1,88 @@
+
+<view class='container' catchtouchmove="catchTouchMove">
+<view bindtap='previewImage' class="userinfo">
+      <image class="userinfo-avatar" wx:if="{launchInfo}" src="{{launchInfo.avatarUrl}}" background-size="cover"></image>
+</view>
+
+
+
+  <view class='paodao'>
+    <image  animation='{{animationBg}}' id='the-id' style='width:650rpx;height:4152rpx;position: absolute;left:50%;transform: {{paodaoTop}} ;z-index:0;' src='games-big-bg.png'></image>
+  </view>
+
+  <view>
+  <image  animation='{{animationBall}}' id='the-ball' style='width:100rpx;height:100rpx;position: absolute;left:50%;transform: {{ballTop}} ;z-index:10;' src='https://www.daguaishou.com/statics/education/red-envelopes/images/games-ball.png'></image>
+  </view>  
+
+    <canvas disable-scroll="true" canvas-id='gamebg' style="width: {{canvasWidth}}px; height: {{canvasHeght}}px;position: absolute;left:50%;top:0;transform: translateX(-50%);z-index:0;">
+   
+  </canvas>
+
+  <canvas disable-scroll="true" canvas-id='tishi' bindtouchstart='bindCanvasTouchstart' bindtouchmove='bindCanvasTouchmove' bindtouchend='bindCanvasTouchend'  style="width: {{canvasWidth1}}px; height: {{canvasHeght}}px">
+
+   <cover-view class='saohua-layer  {{hid?"hid":""}}'>小样，看你能仍多远  ! </cover-view>
+   <cover-view class='count-down {{isCountDown?"show":""}}'> {{countDown}}</cover-view>
+   <cover-view wx:if="{{gamebeginbtnhid}}" class='games-begin-btn' bindtap='binGamesBegin'><cover-image style='width:360rpx;height:88rpx' class="img"  src="https://www.daguaishou.com/statics/education/red-envelopes/images/games-begin-btn.png"></cover-image> </cover-view>
+   
+   <cover-view class='time'> {{righttime}}s</cover-view>
+
+   <cover-view class='after-begin-wrap  {{moveTotop?"move":""}}'>
+
+      <cover-view class='img-view'>     
+        <cover-image bindtap='bindShowLayer' style='width:250rpx;height:50rpx' class="img" src="https://www.daguaishou.com/statics/education/red-envelopes/images/games-seerule.png" /></cover-view> 
+
+      <cover-view class='menu'>
+        <cover-view class='item' style='width:33%'> <cover-view>大赛奖金 </cover-view> <cover-view class='red'>{{money}}</cover-view> </cover-view>
+        <cover-view class='item' style='width:33%;border-left:2rpx solid #d9d9d9;border-right:2rpx solid #d9d9d9'><cover-view>参与人数 </cover-view> <cover-view class='red'>{{speedPro}}人</cover-view> </cover-view>
+        <cover-view class='item' style='width:33%'><cover-view>状元奖金 </cover-view> <cover-view class='red'>{{firstmoney}}元</cover-view> </cover-view>
+      </cover-view>
+
+   </cover-view> 
+
+   <cover-view wx:if="{{ruleLayerShow}}" class='rule-layer'>
+      <cover-image style='width:637rpx;height:975rpx;position:absolute;left:50%;transform: translateX(-50%);top:10%' class="img" src="{{gameImagelist[2]}}" /> 
+      <cover-image bindtap='bindCloseRuleLayer' style='width:54rpx;height:54rpx;position:absolute;top:60rpx;;right:60rpx;' class="img" src="{{gameImagelist[3]}}" /> 
+    <cover-view class='txt-wrap'>
+       <!--<cover-view class='txt' wx:for="{{ruleArr}}" wx:key="{{index}}">{{index + 1}}.{{item}}</cover-view>-->
+       <cover-view class='txt tit'>如何进入小游戏？</cover-view>
+       <cover-view class='txt'>1.先在微信小程序里搜“红包游戏大赛”点击即可进入游戏。 </cover-view>
+       <cover-view class='txt tit'>红包游戏大赛如何玩？ </cover-view>
+       <cover-view class='txt'>一：进入游戏界面后 </cover-view>
+       <cover-view class='txt'>1：你可以在“赏金金额”栏输入要发的红包金额。 </cover-view>
+       <cover-view class='txt'>2：在“数量（个）”这一栏设置红包个数，特别需要注意的是金额和红包钱数一般控制在2倍以内，如红包金额1元，那么红包个数应该是2个。
+在“时间设定（S）栏”设定大赛计时时间，最后生点击“成红包游戏红”既可以。</cover-view>
+       <cover-view class='txt'>二：生成红包后可以发到好友或者群聊 再就是生成图片分享朋友圈既可以。 </cover-view>
+       <cover-view class='txt tit'>赛道技巧！ </cover-view>
+       <cover-view class='txt'>参与者进入赛道后点击“开始”即可开始比赛，球速快慢取决于参与者一次滑动小球的速度。</cover-view>
+       <cover-view class='txt'>领奖规则根据参赛者滑动小球的距离远近来领取相应的红包。</cover-view>
+    </cover-view>
+   </cover-view>
+
+   <cover-view bindtap='bindGoToUserCenter' wx:if="{{rankinglayerShow}}" class='ranking-layer'> 
+       <cover-image style='width:640rpx;height:780rpx;position:absolute;left:50%;transform: translateX(-50%);top:200rpx;' class="img" src="{{gameImagelist[4]}}" /> 
+
+      <!--<cover-image bindtap='bindCloseRuleLayer' style='width:54rpx;height:54rpx;position:absolute;top:110rpx;right:60rpx;' class="img" src="https://www.daguaishou.com/statics/education/red-envelopes/images/layer-close-btn.png" /> --> 
+
+       <cover-view class='userinfo' style='width:130rpx;height:130rpx;position:absolute;border-radius: 50%;padding:5rpx;background:none'>
+         <cover-image style='width:130rpx;height:130rpx;position:absolute;border-radius: 50%;top:0rpx' class="img" src="{{userInfo.avatarUrl}}" /> 
+       </cover-view>
+
+       <cover-view class='my-zj'>
+        <cover-image style='width:360rpx;height:70rpx;' class="img" src="{{gameImagelist[5]}}" /> 
+        <cover-view class='txt'>我的战绩</cover-view>
+       </cover-view>
+
+      <cover-view class='text-wrap'>
+        <cover-view class='txt1'> <cover-view class='big'>{{rice}}</cover-view> <cover-view>m</cover-view> </cover-view>
+        <cover-view class='txt2'>目前排名：{{paiming}}</cover-view>
+      </cover-view>  
+
+   </cover-view>
+
+
+  </canvas>   
+
+</view>
+
+
+

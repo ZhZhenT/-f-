@@ -1,0 +1,26 @@
+/* pages/user-record/user-record.wxss */
+
+.top-tabs{background: #ffffff;font-size: 28rpx;text-align: center;display: flex;justify-content: space-around;}
+.tab-item{width: 50%;height: 100rpx;line-height: 100rpx;border-bottom:1rpx solid #d9d9d9}
+.tab-item{box-sizing: border-box;}
+.first-tab{border-right:1rpx solid #d9d9d9}
+.current-tab{border-bottom:5rpx solid #ff665e;color: #ff665e}
+.userinfo{background: #ffffff;text-align: center;padding-top: 60rpx;}
+.userinfo-avatar {width: 128rpx;height: 128rpx;margin: 5rpx;border-radius: 50%;z-index: 10;}
+.user-info-text-box{font-size: 28rpx;}
+.user-info-text-box text{margin:0 5rpx;margin-top: 5rpx;}
+.relevant-information{display: flex;text-align: center;justify-content: space-between;font-size: 28rpx;color: #999999;padding:40rpx 30rpx;background: #ffffff}
+.relevant-information-item{width: 50%;border-top: 1rpx  dotted  #d9d9d9;padding: 40rpx 0;}
+.relevant-information-item .num{font-size: 48rpx;color: #333333;margin-top: 30rpx;}
+.user-participate-info-top{display: flex;justify-content: space-around;text-align: center;border-top: 30rpx solid #f3f3f3;}
+.user-participate-info-top text{width: 33.333%;font-size: 28rpx;color: #666666;padding: 20rpx 0;background: #d9d9d9;}
+.scroll-view-info{display: flex;justify-content: space-around;text-align: center;font-size: 28rpx;color: #333333;position: relative;}
+.scroll-view-info-line::after{content: " ";position: absolute;left: 30rpx;right: 30rpx;height: 2rpx; background:#d9d9d9;bottom: 0;}
+.scroll-view-info text{width: 33.333%;padding: 20rpx 0;}
+.scroll-view-info .item .txt{text-align: left;margin-left: 20rpx;}
+.scroll-view-info .item .txt .user-name{overflow:hidden; text-overflow:ellipsis;white-space:nowrap;max-width:250rpx;}
+.scroll-view-info .item .txt .date{font-size: 24rpx;color: #999999;margin-top: 20rpx;}
+.initiator-avatar-box{width: 80rpx;height: 80rpx;border-radius: 50%;background: #d9d9d9;margin-top: 5rpx;padding: 5rpx;}
+.initiator-avatar-box .initiator-avatar{width: 80rpx;height: 80rpx;border-radius: 50%;}
+.scroll-view-info .col{padding: 30rpx 0;display: flex;align-items: center;justify-content: center;}
+.scroll-view-info .item{display: flex;justify-content: flex-start;padding-left: 30rpx;}

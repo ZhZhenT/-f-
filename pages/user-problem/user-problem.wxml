@@ -1,0 +1,14 @@
+<!--pages/user-problem/user-problem.wxml-->
+<view class="container">
+  <view class='bg-box'>
+    <image class='envelopes-img' src='http://www.daguaishou.com/statics/education/red-envelopes/images/problem-bg.png' style='width:711rpx;height:1089rpx;'></image>
+    <view class='swiper-box' >
+      <scroll-view scroll-y >
+        <view class='item' wx:for="{{problem}}" wx:key="{{index}}">
+            <view class='tit'>{{item.tit}}</view>
+            <view class='text'>{{item.text}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

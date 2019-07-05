@@ -1,0 +1,41 @@
+<!--pages/generate/generate.wxml-->
+
+<view catchtouchmove="catchTouchMove" class="container">
+
+  <view class='cont-box'>
+     <view class='userinfo'>
+         <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+     </view>
+     <view class='prob-box'>
+        <text>您的冰壶挑战红包</text>
+        <image src='http://www.daguaishou.com/statics/education/red-envelopes/images/small-envelopes.png' style='width:23rpx;height:25rpx;margin-left:15rpx;'></image>
+     </view>
+     <view class='bg-tit'>
+        已经生成
+     </view>
+  </view>
+
+  <view class='bot-bg'>
+    <image src='http://www.daguaishou.com/statics/education/red-envelopes/images/generate-bot-bg.jpg' style='width:750rpx;height:707rpx;display:block'></image>
+    <view class='btn-wrap'>
+      <button open-type="share" class='submit-btn'>
+            <image class='submit-btn-icon' src='http://www.daguaishou.com/statics/education/red-envelopes/images/submit-btn-y-icon.png'></image>
+            <view class='submit-text' >转发到好友或者群聊</view>
+      </button>
+      <view bindtap='bindSeeImage' class='submit-btn'>
+          <image class='submit-btn-icon' src='http://www.daguaishou.com/statics/education/red-envelopes/images/submit-btn-y-icon.png'></image>
+          <view class='submit-text' >生成图片分享到朋友圈</view>
+      </view>
+    </view>
+  </view>  
+
+</view>
+
+<!-- 分享弹窗 --> 
+<view  wx:if="{{layerShow}}" catchtouchmove="catchTouchMove" class='slide-show-layer'>
+  <view class='cont' id='cont'>
+    <canvas bindlongpress='previewImage' canvas-id="Canvas" style="width: {{canvasWidth}}px; height: {{canvasHeght}}px;position: absolute;left:0;top:0;" ></canvas>
+
+
+  </view>
+</view>

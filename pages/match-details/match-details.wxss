@@ -1,0 +1,41 @@
+/* pages/match-details/match-details.wxss */
+.userinfo-box{background: #ffffff;padding-top: 70rpx;}
+.userinfo {display: flex;flex-direction: column;align-items: center;background: #ff665e;border-radius: 50%;width: 133rpx;height: 133rpx;margin: 0 auto;}
+.userinfo-avatar {width: 128rpx;height: 128rpx;margin: 5rpx;border-radius: 50%;z-index: 10;position: relative;}
+.scorll-icon{position: relative;z-index: 99;margin: -16rpx auto 0;width: 393rpx;height: 66rpx;background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/details-scroll.png')no-repeat;background-size: 100%;text-align: center;color: #ffffff;font-size: 32rpx;box-sizing: border-box;padding-top: 5rpx;font-weight: bold;}
+.scorll-icon text{color: #fed952;}
+.userinfo-box .match-info{font-size: 24rpx;color: #999999;display: flex;justify-content: center;margin-top: 30rpx;}
+.btn-menu{display: flex;color: #999999;font-size: 28rpx;justify-content: space-around;padding-bottom: 30rpx;margin-top: 80rpx;}
+.btn-menu view{padding-left:50rpx;height: 50rpx;line-height:50rpx;}
+.btn-menu view:nth-child(1){background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/detail-menu1.png') 0 center no-repeat;background-size: 41rpx 41rpx;}
+.btn-menu view:nth-child(2){background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/detail-menu2.png') 0 center no-repeat;background-size: 41rpx 41rpx;}
+.btn-menu view:nth-child(3){background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/detail-menu3.png') 0 center no-repeat;background-size: 41rpx 41rpx;}
+.details-info{text-align: center;}
+.ranking-box .tit{height: 32rpx;line-height: 32rpx;font-size: 32rpx;text-align: center;margin:40rpx 0 20rpx;position: relative}
+.ranking-box .tit text.icon{padding-left: 40rpx;background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/detail-ranking.png') 0 center no-repeat;background-size: 30rpx;}
+.ranking-box .tit .tishi{font-size: 22rpx;color: #999999;display: inline-block}
+.ranking-box .tit .active{color: #FF584A;}
+.ranking-box .details-info .details-info-top{color: #666666;font-size: 28rpx;display: flex;justify-content: space-around;padding: 18rpx;background: #d9d9d9;}
+
+.all-ranking .ranking-item{color: #333333;font-size: 28rpx;display: flex;justify-content: space-around;padding: 23rpx;position: relative;}
+.all-ranking .ranking-item::after{content:"";position: absolute;left: 30rpx;right: 30rpx;height: 2rpx;background: #d9d9d9;bottom: 0}
+.all-ranking .ranking-item .col{display: flex;align-items: center;justify-content: center;}
+.all-ranking .ranking-item .avatar-box{width:80rpx;height: 80rpx;background: #d9d9d9;border-radius: 50%;margin:0 15rxp 0 20rpx;padding: 5rpx;}
+.all-ranking .ranking-item .avatar-box image{width: 80rpx;height: 80rpx;border-radius: 50%;display: block;}
+.all-ranking .ranking-item .username{overflow:hidden; text-overflow:ellipsis;white-space:nowrap;max-width:250rpx;margin-left: 15rpx;}
+.all-ranking .ranking-item .item2col{justify-content: flex-start;}
+.all-ranking .more{text-align: center;}
+.all-ranking .more text{display: inline-block;padding: 30rpx 30rpx 30rpx 20rpx;background: url(http://www.daguaishou.com/statics/education/red-envelopes/images/more-btn.png) right center no-repeat;background-size: 21rpx 11rpx;font-size: 24rpx;color: #666666;}
+.all-ranking{transition: 0.5s;}
+.hidItem{padding: 0!important;height: 0;overflow: hidden;}
+
+.slide-show-layer{position: fixed;left: 0;right: 0;top: 0;bottom: 0;background: rgba(0, 0, 0, 0.4);padding: 0 60rpx;z-index: 99;}
+.slide-show-layer .cont{position: absolute;left: 60rpx;right:  60rpx;height: 940rpx;top: 50%;transform: translateY(-50%);}
+.slide-show-layer .cont .close-btn{background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/layer-close-btn.png') center no-repeat;background-size:54rpx 94rpx;width: 54rpx;height: 94rpx;position: absolute;right: 20rpx;top: -94rpx;}
+.slide-show-layer .cont .txt{font-size: 28rpx;color: #666666;text-align: center;margin-top: 50rpx;}
+.slide-show-layer .cont .userinfo{width: 135rpx;height: 135rpx;background: #ff665e;margin: 30rpx auto 0;border-radius: 50%;}
+.slide-show-layer .cont .userinfo image{width: 130rpx;height: 130rpx;border-radius: 50%;display: block;}
+.slide-show-layer .cont .scorll-icon{position: relative;z-index: 99;margin: -16rpx auto 0;width: 393rpx;height: 66rpx;background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/details-scroll.png')no-repeat;background-size: 100%;text-align: center;color: #ffffff;font-size: 32rpx;box-sizing: border-box;padding-top: 5rpx;font-weight: bold;}
+.slide-show-layer .cont .bot-box{position: absolute;bottom: 0;height: 668rpx;width: 100%;background: url('http://www.daguaishou.com/statics/education/red-envelopes/images/red-envelopes-bg.png') center no-repeat;background-size: 100%;}
+
+

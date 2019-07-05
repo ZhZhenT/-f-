@@ -1,0 +1,74 @@
+<!--index.wxml-->
+
+<view class="container">
+
+  <view class="userinfo">
+      <image bindtap='bindToDetails' class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+
+  <view class='user-input'>
+
+    <view class='tishi {{showTishi?"show":""}}'>{{tishiText}}</view>
+
+    <label>
+      <view  class='label-text'>赏金金额</view>
+      <input type='digit' value='{{priceval}}' bindblur="bindMoneyBlur" placeholder-style="color:#d9d9d9" bindinput="bindMoneyInput" placeholder='￥100'></input>
+    </label>
+
+     <label>
+      <view class='label-text'>数量（个）</view>
+      <input type='number' value='{{numval}}' placeholder-style="color:#d9d9d9" bindinput="bindNumInput" placeholder='5'></input>
+    </label>
+
+    <label>
+    <view class='label-text select'>时间设定（S）</view>
+      <view class='picker-box'>
+          <image class='select-icon' src='http://www.daguaishou.com/statics/education/red-envelopes/images/index-select-icon.png'></image>
+          <picker  bindchange="bindPickerChange" value="{{areaIndex}}" range="{{area}}">  
+            <view class="picker">  
+              {{area[areaIndex]}}  
+            </view>  
+          </picker> 
+      </view>
+    </label>
+
+    <view class='service-money' bindtap='bindToGame'>需要支付￥<text>{{serviceMoney}}</text>服务费，优先使用余额￥<text>0.00</text></view>
+
+    <view class='submit-btn' bindtap='bindSubmitBtn'>
+       <image class='submit-btn-icon' src='http://www.daguaishou.com/statics/education/red-envelopes/images/submit-btn-icon.png'></image>
+       <view class='submit-text' >{{submitText}}</view>
+    </view>
+
+  </view>
+
+  <view class='bottom-menu'>
+
+    <view bindtap='bindBottomMenu' wx:for="{{bottomMenuInfo}}" data-goUrl="{{item.url}}" class='bottom-menu-item {{1==index?                    "bottom-menu-item-center":""}}'  wx:key="{{index}}">
+      <image  class='bottom-menu-icon' src="{{item.imgUrl}}"></image>
+      <view>{{item.text}}</view>
+    </view>
+  
+  </view>
+
+
+
+
+
+</view>
+
+
+
+
+<!--<view class='slide-show-layer'>
+  <view class='cont'>
+    <view class='txt'>我在红包游戏挑战赛中获得</view>
+    <view class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class='scorll-icon'>第一名</view>
+    <view class='bot-box'>
+
+    </view>
+    <view class='close-btn'></view>
+  </view>
+</view>-->

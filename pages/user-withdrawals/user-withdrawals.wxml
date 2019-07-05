@@ -1,0 +1,34 @@
+
+<view catchtouchmove="catchTouchMove" class="container">
+  <view class='cont-box'>
+    <view class='col amount-money'>
+      <view>赏金金额</view>
+      <view class='all-money'>{{allmoney}}元</view>
+    </view>
+    <label class='col'>
+      <view  class='label-text'>提现金额</view>
+      <input bindinput='bindListenTixian' value='{{tixianValue}}' type='digit' placeholder-style="color:#d9d9d9;font-size:40rpx;"placeholder='￥0.00'></input>
+    </label>
+    <view class='prompt-text'>
+      <view class='text-box'>
+        <text>提现金额1元起,</text><text bindtap='bindAlltixian' class='all-take'>全部提现</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='bot-envelopes'>
+    <image class='envelopes-img' src='http://www.daguaishou.com/statics/education/red-envelopes/images/red-envelopes-bg.png'></image>
+    <view class='submit-btn' bindtap='bindtixian'>
+       <image class='submit-btn-icon' src='http://www.daguaishou.com/statics/education/red-envelopes/images/submit-btn-y-icon.png'></image>
+       <view class='submit-text' >提现</view>
+    </view>
+    <view class='tishi'>
+      <text>1-5个工作日内到账</text>
+    </view>
+    <view class='prob-box' bindtap='bindtoproblem'>
+      <image class='envelopes-img' src='http://www.daguaishou.com/statics/education/red-envelopes/images/cash-all-icon.png' style='width:26rpx;height:26rpx;margin-right:15rpx;'></image>
+      <text>常见问题</text>
+    </view>
+  </view>
+
+</view>

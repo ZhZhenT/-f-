@@ -1,0 +1,22 @@
+/* pages/user-withdrawals/user-withdrawals.wxss */
+
+
+page{background: #fdf1c8}
+
+.cont-box{box-sizing: border-box;width: 570rpx;padding: 110rpx 0;font-size: 32rpx;margin: 0 auto;color: #333333;}
+.cont-box .col{display: flex;  justify-content: space-between;padding: 30rpx 0 50rpx;}
+.cont-box .col .all-money{width: 390rpx;color:#000000;font-size:40rpx;font-weight: bold}
+.cont-box .col input{width: 390rpx;border-bottom: 1rpx solid #d9d9d9;color:#000000;font-size:40rpx;font-weight: bold}
+.cont-box .prompt-text{display: flex;justify-content: flex-end;}
+.cont-box .prompt-text .text-box{width: 390rpx;font-size: 24rpx;color: #999999;margin-top: -50rpx;}
+.cont-box .prompt-text .text-box text{height:50rpx;line-height: 50rpx;padding: 0 10rpx;}
+.cont-box .prompt-text .text-box .all-take{color: #ff665e}
+.bot-envelopes{width: 100%;height: 791rpx;position: fixed;bottom: 0;}
+.bot-envelopes .envelopes-img{width: 100%;height: 791rpx;}
+.bot-envelopes .tishi{position: absolute;color: #ffffff;z-index:99;left: 50%;transform: translateX(-50%);top:400rpx;font-size: 24rpx;}
+.submit-btn{text-align: center;position:absolute;z-index:99;left: 50%;transform: translateX(-50%);top:300rpx;}
+.submit-btn-icon{width: 560rpx;height: 84rpx;}
+.submit-text{position: absolute;top: 0;line-height: 84rpx;color: #000000;font-size: 32rpx;text-align: center;left: 0;right: 0;}
+.bot-envelopes .prob-box{position: absolute;z-index: 10;bottom: 80rpx;display: flex;align-items: center;justify-content: center;left: 0;right: 0;}
+.bot-envelopes .prob-box text{color:#FED552;font-size: 26rpx;}
+

@@ -1,0 +1,74 @@
+
+<view class='container'>
+
+  <view class='userinfo-box'>
+    <view class='userinfo' bindtap='bindToIndex'>
+      <image class='userinfo-avatar' src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class='scorll-icon'>{{Ranking}}：赏金<text>{{bonus}}</text>元</view>
+    <view class='match-info'>
+      <view style='margin-right:10rpx' class='text-wrap'>大赛赏金：<text>{{totalmoney}}</text> </view>
+      <view style='margin-left:10rpx' class='text-wrap'>参与人数：<text>{{speedPro}}</text>人</view>
+    </view>
+    <view class='btn-menu'>
+      <view bindtap='bindToWithdrawals'>提现</view>
+      <view  bindtap='bindToIndex'>发一个</view>
+      <view bindtap='bindSeeImage'>晒图</view>
+    </view>
+  </view>
+ 
+  <view class='ranking-box'>
+
+    <view class='tit'><text class='icon'>排行榜</text>
+    <view hover-class='active' wx:if="{{isShowSpeed}}" bindtap='bindRefresh'  class='tishi'>（预计{{endTime}}后结束 请点击刷新）</view>
+    </view>
+
+    <view class='details-info'>
+      <view class='details-info-top'>
+        <text style='width:20%;'>名次</text>
+        <text style='width:40%;'>用户</text>
+        <text style='width:20%;'>距离</text>
+        <text style='width:20%;'>赏金</text>
+      </view>
+      
+      <view class='all-ranking'>
+
+        <view class='ranking-item'  wx:for="{{rankingList}}" wx:key="{{index}}"  wx:if="{{index<showItem && rankingList}}">
+          <view class='col' style='width:20%;'>{{item.mc}}</view>
+          <view class='col item2col' style='width:40%;'>
+            <view class='avatar-box'><image class='avatar' src="{{item.pic}}"></image></view>
+            <text class='username'>{{item.nc}}</text> 
+          </view>
+          <view class='col' style='width:20%;'>{{item.meter}}</view>
+          <view class='col' style='width:20%;'>{{item.sj}}</view>
+        </view>
+
+          
+        <view class='ranking-item {{isShow?"showItem":"hidItem"}}'  wx:for="{{rankingList}}" wx:key="{{index}}" >
+          <view class='col' style='width:20%;'>{{item.mc}}</view>
+          <view class='col item2col' style='width:40%;'>
+            <view class='avatar-box'><image class='avatar' src="{{item.pic}}"></image></view>
+            <text class='username'>{{item.nc}}</text> 
+          </view>
+          <view class='col' style='width:20%;'>{{item.meter}}</view>
+          <view class='col' style='width:20%;'>{{item.sj}}</view>
+        </view>
+
+        <!--<view class='more' wx:if="{{!isShow}}">
+          <text bindtap='bindShowMore'>查看更多</text>
+        </view>-->
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 分享弹窗 -->
+<view  wx:if="{{layerShow}}" catchtouchmove="catchTouchMove" class='slide-show-layer'>
+  <view class='cont' id='cont'>
+    <canvas bindlongpress='previewImage' canvas-id="Canvas" style="width: {{canvasWidth}}px; height: {{canvasHeght}}px;position: absolute;left:0;top:0;" ></canvas>
+    <view bindtap='bindHiddenImage' wx:if="{{canvasShow}}" class='close-btn'></view>
+
+  </view>
+</view>

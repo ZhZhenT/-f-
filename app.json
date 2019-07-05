@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/generate/generate",
+    "pages/user-record/user-record",
+    "pages/user-withdrawals/user-withdrawals",
+    "pages/user-problem/user-problem",
+    "pages/match-details/match-details",
+    "pages/game/game"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "XXXX",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

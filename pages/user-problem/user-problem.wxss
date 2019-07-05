@@ -1,0 +1,9 @@
+/* pages/user-problem/user-problem.wxss */
+page{background: #fdf1c8}
+
+.bg-box{position: fixed;left: 50%;top: 50%;transform: translate(-50%,-50%)}
+.swiper-box{position: absolute;z-index: 10;top: 270rpx;width: 100%;padding: 0 40rpx;box-sizing: border-box;}
+.swiper-box scroll-view {height: 770rpx; width: 100%;}
+.swiper-box scroll-view .item{padding-top: 40rpx;}
+.swiper-box scroll-view .item .tit{font-size: 28rpx;color: #ffffff;}
+.swiper-box scroll-view .item .text{font-size: 24rpx;color: #fff6d9;margin-top: 20rpx;}

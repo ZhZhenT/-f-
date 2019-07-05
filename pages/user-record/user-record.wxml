@@ -1,0 +1,65 @@
+
+<view class='container'>
+  <view class='top-tabs'>
+    <view bindtap='bindTopMenu' data-current="{{index}}" class='tab-item {{0==index?"first-tab":""}} {{currentTab==index?"current-tab":""}}' wx:for="{{tabs}}" wx:key="{{index}}" >
+      我{{item.statetext}}
+    </view>
+    <!--<view class='tab-item current-tab first-tab'>我发起的大赛</view>
+    <view class='tab-item'>我参与的大赛</view>-->
+  </view>
+  <view class="userinfo">
+    <image bindtap='bindToIndex' class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class='user-info-text-box'>
+      <text>{{userInfo.nickName}}</text> <text>{{tabs[currentTab].statetext}}</text>
+    </view>
+  </view>
+  <view class='relevant-information'>
+     <view class='relevant-information-item'>
+      <text>金额（元）</text>
+      <view class='num'>{{total.preTotal}}</view>
+     </view>
+      <view class='relevant-information-item'>
+      <text>次数（次）</text>
+      <view class='num'>{{total.num}}</view>
+     </view>
+  </view>
+
+  <view  wx:if="{{currentTab == 0}}" class='user-participate-info'>
+    <view class='user-participate-info-top'>
+      <text>日期</text>
+      <text>参与度</text>
+      <text>赏金</text>
+    </view>
+    <scroll-view scroll-y style="height: 450rpx;">
+      <view bindtap='binToGenerate' data-end="{{item.is_end}}" data-url="{{item.orderno}}" class='scroll-view-info' wx:for="{{launchInfo}}" wx:key="{{index}}">
+        <text>{{item.time}}</text>
+        <text>{{item.cyd}}</text>
+        <text>{{item.money}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view  wx:else="{{currentTab == 1}}" class='user-participate-info'>
+    <view class='user-participate-info-top'>
+      <text style='width:50%'>发起者/日期</text>
+      <text style='width:20%'>名次</text>
+      <text style='width:30%'>赏金</text>
+    </view>
+    <scroll-view scroll-y style="height: 450rpx;">
+     <view data-url="{{item.orderno}}"  bindtap='binTomatch' class='scroll-view-info scroll-view-info-line' wx:for="{{participateInfo}}" wx:key="{{index}}">
+        <view class='item col' style='width:50%' >
+          <view class='initiator-avatar-box'><image class='initiator-avatar' src="{{item.pic}}"></image></view>
+          <view class='txt'>
+            <view class='user-name'>{{item.nc}}</view>
+            <view class='date'>{{item.time}}</view>
+          </view>
+        </view>
+        <view class='col' style='width:20%'>{{item.mc}}</view>
+        <view class='col' style='width:30%'>{{item.sj}}</view>
+     </view>
+    </scroll-view>
+  </view>
+
+
+
+
+</view>
